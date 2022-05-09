@@ -1,11 +1,13 @@
 # webflux-noaa
 Project using Spring's WebFlux framework to consume weather forecasts from NOAA's weather API.
 
+## About the Project
 To build, open your terminal of choice at root project folder and use the command "mvn clean install".
 
 To demonstrate the consumption of NOAA weather API data there are two unit tests included. The first on will get the forecast data for the current data and print it to the console(for purposes of this demonstration only). The second unit test gets a five day forecast by hitting the same endpoint and streaming over the collected periods.
 
 The data for a single forecast object is serialized as follows.
+```JSON
 {
   "daily" : [ {
     "day_name" : "Overnight",
@@ -13,3 +15,4 @@ The data for a single forecast object is serialized as follows.
     "forecast_blurp" : "Mostly Cloudy"
   } ]
 }
+```
