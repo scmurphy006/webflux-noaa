@@ -12,7 +12,12 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
 /**
- * Service bean to consume a Forecast Object from the NOAA weather API
+ * Service bean to consume a Forecast Object from the NOAA weather API. The
+ * reason this is seperate from the ForecastController is to seperate
+ * functionality. If the controller is responsible for driving a UI or exposing
+ * data, but this class is only ever injesting and tranforming data then it
+ * keeping them seperated is probably the right move. However, that depends on
+ * the project's requirements.
  */
 @Service
 public class ForecastClient {
