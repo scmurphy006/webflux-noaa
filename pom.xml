@@ -52,4 +52,33 @@
 		</plugins>
 	</build>
 
+	<profiles>
+		<profile>
+			<id>reports</id>
+			<properties>
+				<env>reports</env>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.owasp</groupId>
+						<artifactId>dependency-check-maven</artifactId>
+						<inherited>false</inherited>
+						<configuration>
+							<assemblyAnalyzerEnbeded>false</assemblyAnalyzerEnbeded>
+							<formats>HTML,XML</formats>
+						</configuration>
+						<executions>
+							<execution>
+								<goals>
+									<goal>aggregate</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
 </project>
